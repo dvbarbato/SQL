@@ -14,6 +14,10 @@ FROM silver.olist.item_pedido
 
 -- COMMAND ----------
 
+
+
+-- COMMAND ----------
+
 SELECT idPedido,
        idProduto,
        vlPreco,

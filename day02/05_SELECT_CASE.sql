@@ -12,7 +12,7 @@ SELECT *,
         WHEN vlPreco <= 800 THEN "700 -| 800"
         WHEN vlPreco <= 900 THEN "800 -| 900"
         WHEN vlPreco <= 1000 THEN "900 -| 1000"
-        ELSE ">1000"
-      END
+        ELSE "+1000"
+      END AS fxPreco
 
 FROM silver.olist.item_pedido

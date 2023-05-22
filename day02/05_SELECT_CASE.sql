@@ -16,3 +16,16 @@ SELECT *,
       END AS fxPreco
 
 FROM silver.olist.item_pedido
+
+-- COMMAND ----------
+
+-- DBTITLE 1,Níveis de Frete
+SELECT *,
+       CASE 
+          WHEN vlFrete / (vlFrete + vlPreco) = 0 THEN 'Frete Gratuito'
+          WHEN vlFrete / (vlFrete + vlPreco) <= 0.25 THEN 'Frete Baixo'
+          WHEN vlFrete / (vlFrete + vlPreco) <= 0.5 THEN 'Frete Médio'
+          WHEN vlFrete / (vlFrete + vlPreco) <= 0.75 THEN 'Frete Intermediário'
+          ELSE 'Frete Alto'
+        END AS descFrete    
+FROM silver.olist.item_pedido
